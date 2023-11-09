@@ -1,0 +1,29 @@
+<?php
+if(session_status()===PHP_SESSION_NONE)session_start();
+if($_SESSION['password']!='admin123456'){
+    header('location:../design/rgister.php');
+    exit; ; }
+include ('../inc/conn.php'); 
+// $x=null;
+// if($x==null){(!$x=$x==null)
+//     echo 'hello';
+// }
+   if(isset($_GET['id'])){
+    $id=$_GET['id'];
+    $mysql="SELECT *  FROM `catogray` WHERE `id`='$id'";
+    $res=mysqli_query($conn,$mysql);
+    if(!mysqli_fetch_assoc($res)){//فى حاله مش موجودid   mysqlifetch=null
+    $_SESSION['error']='delleting error';
+    header('location:../design/iindexcat.php');
+  
+        die;
+    }
+      
+   else{$mysql="DELETE FROM `catogray` WHERE `id`='$id'";
+$res=mysqli_query($conn,$mysql);
+if(mysqli_affected_rows($conn)){
+    $_SESSION['success']='deleting succfull';
+}}
+//mysqli_fetch_all
+  header('location:../design/iindexcat.php');
+   }
