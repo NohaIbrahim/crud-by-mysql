@@ -1,2 +1,2 @@
 <?php
-$conn=mysqli_connect('localhost','root','','crud');
+$conn=mysqli_connect('localhost','root','','crud1');

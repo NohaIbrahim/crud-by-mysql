@@ -13,7 +13,9 @@ if(checkRequestMethod("POST")&&checkisset('name')){
    $$key =santizeinput($value);
    
    }$image=addslashes(file_get_contents($_FILES['image']['tmp_name']));
-   
+   if(reqinput($id)){
+    $errors[]="id require";
+    }
     if(reqinput($name)){
    $errors[]="name require";
    }
@@ -42,7 +44,7 @@ if(checkRequestMethod("POST")&&checkisset('name')){
        
    
     if (empty($errors)){
-        $sql="INSERT INTO `products`(`name`,`price`,`quantity`,`image`,`catogray`) VALUES('$name','$price','$quantity','$image','$catogray')";
+        $sql="INSERT INTO `products`(`id`,`name`,`price`,`quantity`,`image`,`cat_id`) VALUES('$id','$name','$price','$quantity','$image','$catogray')";
         mysqli_query($conn,$sql);
      // echo  mysqli_affected_rows($con);لو الداتا دخلت الناتح=1
     

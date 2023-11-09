@@ -5,7 +5,7 @@ if(session_status()===PHP_SESSION_NONE)session_start();
  include('../inc/header.php'); 
  if($_SESSION['password']=='admin123456'){
     include('../inc/nav2.php'); }
-    $mysql=" SELECT * FROM `products`";
+    $mysql=" SELECT `products`.`id`, `products`.`name`,`price`,`quantity`,`image`,`catogray`.`name` AS `catogray_name` FROM `products` LEFT JOIN `catogray` ON `catogray`.`id`=`products`.`cat_id`";
     $res=mysqli_query($conn,$mysql);
   
     
@@ -62,7 +62,7 @@ if(session_status()===PHP_SESSION_NONE)session_start();
                        <td><?php echo $row['price']?></td>
                        <td><?php echo $row['quantity']?></td>
                        <td><?php echo'<img src="data:image/png;base64,'.base64_encode($row['image']).'">' ?></td>
-                       <td><?php echo $row['catogray']?></td>
+                       <td><?php echo $row['catogray_name']?></td>
                        
 
 

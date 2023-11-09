@@ -45,13 +45,12 @@ if($_SESSION['password']!='admin123456'){
             </div>
             <!-- <div class="form-group">
                 <label for="image">image</label>
-                <input type="file" name="image"value="<?php echo'<img src="data:image/png;base64,'.base64_encode($row['image']).'">' ?>"
-                        class="form-control" id="image">
+                <input type="file" name="image"value="<
             </div> -->
             
             <div class="form-group">
-                <label for="catogray">catogray</label>
-                <input type="text" name="catogray"  class="form-control" id="catogray">
+                <label for="catogray">catogray_id</label>
+                <input type="number" name="catogray"  class="form-control" id="catogray">
             </div>
            
          

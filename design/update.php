@@ -52,7 +52,7 @@ if(checkRequestMethod("POST")){
       //  $sql="INSERT INTO `products`(`id`,`name`,`price`,`quantity`,`image`) VALUES('$id','$name','$price','$quantity','$image')";
       
      
-      $sql = "UPDATE `products` SET  `price`='$price' ,`quantity`='$quantity', `image`='image' ,`catogray`='$catogray' ,`name`='$name'
+      $sql = "UPDATE `products` SET  `price`='$price' ,`quantity`='$quantity' ,`cat_id`='$catogray' ,`name`='$name'
       WHERE `id`='$id' ";
      $res= mysqli_query($conn,$sql);
     

@@ -27,7 +27,10 @@
         <form class="my-2 p-3 border" action="../handlender/add.php" method="POST" enctype="multipart/form-data" >
             <div class="form-group">
             <div class="form-group">
-               
+               <div class="form-group">
+                <label for="id">ID</label>
+                <input type="number" name="id" class="form-control" id="id" aria-describedby="emailHelp">
+            </div>
                 <label for="exampleInputName1">name</label>
                 <input type="text" name="name" class="form-control" id="exampleInputName1" >
             </div>
@@ -45,8 +48,8 @@
                 <input type="file" name="image" class="form-control" id="image">
             </div>
             <div class="form-group">
-                <label for="catogray">catogray</label>
-                <input type="text" name="catogray" class="form-control" id="catogray">
+                <label for="catogray">catogray_id</label>
+                <input type="number" name="catogray" class="form-control" id="catogray">
             </div>
          
          
